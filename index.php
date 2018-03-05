@@ -90,40 +90,7 @@
     
   </head>
 
-<?php
-/*
- * Contrôleur de notre page d'accueil
- * gère la dynamique de l'application. Elle fait le lien entre l'utilisateur et le reste de l'application
- */
-	
-	include_once("model/BDD.php");
-	include_once("model/REQUETE.php");
-	include_once("model/Map.php");
-	 
-    
-$map=new Map();
 
-  
-if(!isset ($_POST['name']) AND !isset ($_POST['pwd'])){
-
-$name=null;
-$pwd=null;
-}else{
-$name=  htmlspecialchars(trim ($_POST['name'])) ;
-
-$pwd=  htmlspecialchars(trim ($_POST['pwd'])) ; 
-
-}
-
-  
-   $result = $map->login();
-$z  = $result->fetch(PDO::FETCH_OBJ);
-      //var_dump($z);
-   
-if(!$rows=$z){
-  
-  	
- ?>
  
 <form class="form-style-3" action="index.php" method ="POST">
 <fieldset><legend>Authentification</legend>
@@ -137,27 +104,7 @@ if(!$rows=$z){
 
 </form>
  
-  <?php  
-  }else{
- 
-session_start();
-    $_SESSION['pwd'] = $z->pwd;
-    $_SESSION['name'] =  $name;
-     
- 
-	$titre = "Index";
-	$page = "index"; //__variable pour la classe "active" du menu-header
-	
-//__variables pour les balises méta
-	$description = "Projets de proximité de developpement rural de la Wilaya de JIJEL";
-    $title = "projets PPDRI JIJEL";
-	$keyword = "mot-clé 1, mot-clé 2, mot-clé 3";
-    $author = "r";
-
- 
-    	include_once("view/vueIndex.php");
-
-    
-    }
+   
+   
    
   
