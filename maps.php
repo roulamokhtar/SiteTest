@@ -262,7 +262,7 @@ $json .= '"'.utf8_decode($result->nombreprojets).'",';//9
 		//connexion postgresql
 
 try {
-  $pdo = new PDO("pgsql:host=localhost;dbname=AA", "postgres", "foret");
+  $pdo = new PDO("pgsql:host='ec2-50-17-206-214.compute-1.amazonaws.com';dbname=dcn748odolklt7", "vpxvhvftohqcoq", "57606f9441058e43b836e87aa125de6a843803c3e671bf9e254654723119abac");
    $pdo->exec("SET NAMES utf8");
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
@@ -270,7 +270,7 @@ try {
 
 } catch (Exception $e) {
 
-  echo "Pas de connexion";
+  echo "Pas de connexion essayez!!!!!";
 }
 //$bdd = new dbconnect();
 /*
