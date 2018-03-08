@@ -13,8 +13,7 @@
 		<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> <!-- Google Maps -->
 		<script src="http://www.google.com/jsapi"></script>
 		<script src="common/js/points.json"></script>
-		<script type="text/javascript" src="common/js/gmap/markerclusterer.js"></script>
-		<script src="common/js/maps.js"></script>
+ 		<script src="common/js/maps.js"></script>
 	<?php endif; ?>
 	
 	<script src="common/js/script.js"></script>

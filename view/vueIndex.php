@@ -47,7 +47,7 @@ margin: 0px  auto;
     border: 3px  ;  ">
     <main>
           <?php
-           $carto = glob('../ppdri/images/carto/{*.jpg ,*.PNG}', GLOB_BRACE);
+           $carto = glob('../ppdriccc/images/carto/{*.jpg ,*.PNG}', GLOB_BRACE);
            
           foreach ($carto as   $value) {
 
@@ -77,7 +77,7 @@ margin: 0px  auto;
     border: 3px  ;  ">
     <main>
           <?php
-           $projet = glob('../ppdri/images/projet/{*.jpg ,*.PNG}', GLOB_BRACE);
+           $projet = glob('../ppdriccc/images/projet/{*.jpg ,*.PNG}', GLOB_BRACE);
            
           foreach ($projet as   $projets) {
 
@@ -109,7 +109,7 @@ margin: 0px  auto;
     border: 3px  ;  ">
     <main>
           <?php
-           $actions = glob('../ppdri/images/action/{*.jpg ,*.PNG}', GLOB_BRACE);
+           $actions = glob('../ppdriccc/images/action/{*.jpg ,*.PNG}', GLOB_BRACE);
            
           foreach ($actions as   $actionss) {
 
