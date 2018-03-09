@@ -47,7 +47,7 @@ margin: 0px  auto;
     border: 3px  ;  ">
     <main>
           <?php
-           $carto = glob('../images/carto/{*.PNG}', GLOB_BRACE);
+           $carto = glob('images/carto/{*.PNG}', GLOB_BRACE);
            
           foreach ($carto as   $value) {
 
@@ -77,7 +77,7 @@ margin: 0px  auto;
     border: 3px  ;  ">
     <main>
           <?php
-           $projet = glob('../images/projet/{*.PNG}', GLOB_BRACE);
+           $projet = glob('images/projet/{*.PNG}', GLOB_BRACE);
            
           foreach ($projet as   $projets) {
 
@@ -109,7 +109,7 @@ margin: 0px  auto;
     border: 3px  ;  ">
     <main>
           <?php
-           $actions = glob('../images/action/{*.PNG}', GLOB_BRACE);
+           $actions = glob('images/action/{*.PNG}', GLOB_BRACE);
            
           foreach ($actions as   $actionss) {
 

@@ -19,7 +19,6 @@
 	<script src="common/js/script.js"></script>
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb4zkM4A_4LPifJAWMQFEgeGVmgBDwt2U&callback=initialize"
   type="text/javascript"></script>
-//AIzaSyDb4zkM4A_4LPifJAWMQFEgeGVmgBDwt2U
-
+ 
   </body>
 </html>
