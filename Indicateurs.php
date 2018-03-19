@@ -38,15 +38,15 @@ $fname=$r->id;
  
   
 if(isset ($_POST['Modifier'])){
-$Indicateur=$_GET["codeindicateur"];
-$Indicateurs_specifique=$_POST['indicateurs_specifique'];
+$Indicateur=$_GET["CodeIndicateur"];
+$Indicateurs_specifique=$_POST['Indicateurs_specifique'];
 $Unite=$_POST['Unite'];
-$Base_2010_2014=$_POST['base_2010_2014'];
-$ValeursCumulatives=$_POST['valeurscumulatives'];
+$Base_2010_2014=$_POST['Base_2010_2014'];
+$ValeursCumulatives=$_POST['ValeursCumulatives'];
 $Frequence=$_POST['Frequence'];
-$SourcesDonneesMethodologie=$_POST['sourcesdonneesmethodologie'];
-$ResponsabiliteCollecteDonnees=$_POST['responsabilitecollectedonnees'];
-$Description=$_POST['description'];
+$SourcesDonneesMethodologie=$_POST['SourcesDonneesMethodologie'];
+$ResponsabiliteCollecteDonnees=$_POST['ResponsabiliteCollecteDonnees'];
+$Description=$_POST['Description'];
 
 
    $reqIndicateur = 'UPDATE iov SET indicateurs_specifique=?,  unite=?, base_2010_2014=?, valeurscumulatives=?, frequence=?, sourcesdonneesmethodologie=?, 
