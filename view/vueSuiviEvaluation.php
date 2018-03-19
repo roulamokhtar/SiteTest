@@ -13,9 +13,9 @@ include_once("template/vueNavbar.php");
 	<head>
 		<meta charset="utf-8">
 		<title>Administration</title>
-		<link rel="stylesheet" href="../css/style.css" />
-		<link rel="stylesheet" href="../css/html.css">
-		<link rel="stylesheet" href="../css/bootstrap.css" />
+		<link rel="stylesheet" href="common/css/style.css" />
+		<link rel="stylesheet" href="common/css/html.css">
+		<link rel="stylesheet" href="common/css/bootstrap.css" />
 	</head>
 	<body>
 		<div><h4 align="center"> Suivi évaluation du projet: <?php echo '<font size="3" color="red">  '. $nomLocalite.'</font>' ; ?> </h4></div>
