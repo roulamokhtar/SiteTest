@@ -551,7 +551,7 @@ $projets="SELECT * from ppdri  WHERE Type_de_programme=?   order by   Type_de_pr
 //cette fonction permet de 
 	$bdd = parent::getBdd();
 	$url=$_GET['Code_du_PPDRI'];
-	$SuiviEvaluation="SELECT distinct nomactions,activite,resultat,objectif_specifique,og_composante.og_composante,type_de_programme, indicateur,codeindicateur,code_du_ppdri
+	$SuiviEvaluation="SELECT distinct nomactions,activite,resultat,objectif_specifique,og_composante.og_composante,type_de_programme, indicateur,CodeIndicateur,code_du_ppdri
 	from
 	 ppdri,action,activite_resultat,objectif_specifique,indicateurs, resultat, iov, os_composante, og_composante 
 	 WHERE 
@@ -559,20 +559,20 @@ $projets="SELECT * from ppdri  WHERE Type_de_programme=?   order by   Type_de_pr
 	activite_resultat.idactivite=action.Activites and
 	resultat.id=activite_resultat.id_resultat and 
 resultat.id=indicateurs.Resultats AND ppdri.Code_du_PPDRI=iov.code_projet
-   and indicateurs.id=iov.codeindicateur and
+   and indicateurs.id=iov.CodeIndicateur and
 objectif_specifique.id=resultat.id_objectif_specifique and
  objectif_specifique.id=os_composante.id and
 og_composante.id=os_composante.og_composante and action.observation  != 'annulee'  and 
 ppdri.Code_du_PPDRI=?";
 
-$SuiviEvaluationPost="SELECT distinct nomactions,activite,resultat,objectif_specifique,og_composante.og_composante,type_de_programme, indicateur,codeindicateur,code_du_ppdri
+$SuiviEvaluationPost="SELECT distinct nomactions,activite,resultat,objectif_specifique,og_composante.og_composante,type_de_programme, indicateur,CodeIndicateur,code_du_ppdri
  from 
  ppdri,action,activite_resultat,objectif_specifique,indicateurs, resultat,	 iov, os_composante, og_composante 
  WHERE 
 	ppdri.Code_du_PPDRI  = action.Code_PPDRI  AND
 	activite_resultat.idactivite=action.Activites and
 	resultat.id=activite_resultat.id_resultat and 
-resultat.id=indicateurs.Resultats AND ppdri.Code_du_PPDRI=iov.code_projet   and indicateurs.id=iov.codeindicateur and
+resultat.id=indicateurs.Resultats AND ppdri.Code_du_PPDRI=iov.code_projet   and indicateurs.id=iov.CodeIndicateur and
 objectif_specifique.id=resultat.id_objectif_specifique and
  objectif_specifique.id=os_composante.id and
 og_composante.id=os_composante.og_composante and  action.observation != 'annulee' and
@@ -1423,7 +1423,7 @@ public function selectFormIndicateur (){
 $bdd = parent::getBdd();
 //CodeIndicateur represente est 
 $indicateur=" SELECT * from iov, indicateurs,ppdri where 
-indicateurs.id  = iov.codeindicateur and
+indicateurs.id  = iov.CodeIndicateur and
  ppdri.Code_du_PPDRI = iov.code_projet AND
 
 CodeIndicateur='$_GET[CodeIndicateur]' and
