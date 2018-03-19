@@ -1419,7 +1419,7 @@ $res= $bdd->query($realisation) ;
 $actions=$res->fetch(PDO::FETCH_OBJ);
 	return $actions ; // Accès au résultat
 		 			}
-public function selectFormIndicateur ($codeindicateur,$code_projet){
+public function selectFormIndicateur ($codeindicateur="",$code_projet=""){
 $bdd = parent::getBdd();
 //CodeIndicateur represente est 
 $indicateur=" SELECT * from iov, indicateurs,ppdri where 
