@@ -85,7 +85,7 @@ echo '<font size="3" color="red">  '.$status.'</font>';
  </div>
 
 
-<h4 align="center"> <a href="SuiviEvaluation.php?Code_du_PPDRI=<?php echo $codeProjet  ; ?>"> Cadre logique du projet en cours </a></h4>
+<h4 align="center"> <a href="suiviEvaluation.php?Code_du_PPDRI=<?php echo $codeProjet  ; ?>"> Cadre logique du projet en cours </a></h4>
 
 
 <div class="table-responsive" >
