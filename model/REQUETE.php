@@ -1410,9 +1410,9 @@ public function selectForm (){
 $bdd = parent::getBdd();
 
 	$realisation="SELECT * FROM action, realisation_physique, realisation_financiere, ppdri  WHERE
-	realisation_physique.Code = action.code_actions AND
-	realisation_financiere.Code =action.code_actions AND
- ppdri.Code_du_PPDRI=action.code_ppdri and
+	realisation_physique.code = action.code_actions AND
+	realisation_financiere.code =action.code_actions AND
+ ppdri.code_du_ppdri=action.code_ppdri and
  code_actions='$_GET[code_actions]'  ";
 
 $res= $bdd->query($realisation) ; 
