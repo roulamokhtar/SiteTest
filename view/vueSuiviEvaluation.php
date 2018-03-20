@@ -107,7 +107,7 @@ foreach ($a AS $data  ) {
 		<td> <?php echo $data->og_composante ; ?></td>
 		<td> <?php echo $data->type_de_programme ; ?></td>
 		<td> <?php echo $data->indicateur ; ?></td>
-		 <td> <a href="Indicateurs.php?codeindicateur=<?php  echo   $data->codeindicateur   ;?>&code_projet=<?php echo $data->code_du_ppdri  ;?>"> Remplir le détail IOV pour ce projet </a></td>
+		 <td> <a href="Indicateurs.php?codeindicateursss=<?php  echo   $data->codeindicateur   ;?>&code_projet=<?php echo $data->code_du_ppdri  ;?>"> Remplir le détail IOV pour ce projet </a></td>
 
 </tr>
 <?php
