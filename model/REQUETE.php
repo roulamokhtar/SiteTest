@@ -1412,7 +1412,7 @@ $bdd = parent::getBdd();
 	$realisation="SELECT * FROM action, realisation_physique, realisation_financiere, ppdri  WHERE
 	realisation_physique.Code = action.Code_Actions AND
 	realisation_financiere.Code =action.Code_Actions AND
- ppdri.code_du_ppdri=action.code_ppdri and
+ ppdri.Code_du_PPDRI=action.code_ppdri and
  code_actions='$_GET[code_actions]'  ";
 
 $res= $bdd->query($realisation) ; 
