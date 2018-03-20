@@ -12,15 +12,7 @@ if(empty($_GET)){
 <html lang="fr"> 
 	<head>	
 		<meta charset="utf-8">
- <?php
- /*
-     if(isset ($_POST['Modifier'])){
-     	 $actions=$bdd->Projets();
-        echo "<meta http-equiv='refresh' content='0; url=actionsProjet.php?Code_du_PPDRI=$r->Code_PPDRI; '>";
-    }
-    actionsProjets.php?Code_Action=<?php echo $r->Code_PPDRI;
-    */
-     ?>
+ 
 		<title>Modification</title>
 		
 
@@ -116,7 +108,7 @@ if(empty($_GET)){
 
 			</div>
 			
-			<div class="clearfix"></div>
+			 
           
         </div>
       </div>

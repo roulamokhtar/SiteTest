@@ -60,15 +60,7 @@ var_dump($reqIndicateur);
    $resultatIndicateur->execute(array($Indicateurs_specifique,$Unite,$Base_2010_2014,$ValeursCumulatives,$Frequence,$SourcesDonneesMethodologie,$ResponsabiliteCollecteDonnees,$Description,$code,$Indicateur));
  $resultatIndicateur->closeCursor();
  
-    // header('Location:SuiviEvaluation.php?Code_du_PPDRI='.$fPROJET   );
-
-
-   /*$reqFinancier = 'UPDATE realisation_financiere SET  paiement=:paiement WHERE Code=:Code' ;
-  $resultatFinancier=$bdd->getBdd()->prepare($reqFinancier);
-  $resultatFinancier->bindParam('paiement',$paiement);
-  $resultatFinancier->bindParam('Code',$get );
-  $updateFinancier=$resultatFinancier->execute();
- µ*/
+    
   header('Location:actions.php'   );
  
  
@@ -78,7 +70,7 @@ var_dump($reqIndicateur);
  
 
 
- include_once("view/vueFormIndicateur.php");
+ include_once("view/VueFormIndicateur.php");
 
 
     } catch (Exception $e) {

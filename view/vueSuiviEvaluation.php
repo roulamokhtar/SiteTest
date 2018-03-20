@@ -28,12 +28,12 @@ include_once("template/vueNavbar.php");
  <label   > Choisir un objectif spécifique Niveau Projet</label>
 					<select name="objectif" size="1"  >
 						<option value="" >    </option>
-						<option   > Mettre en application des études daménagement forestier   </option>
+						<option   > Mettre en application des études d'aménagement forestier   </option>
 
 						<option   > Elaborer des études daménagement et de développement forestier   </option>
 						<option   > Préserver et restaurer les espaces forestiers dégradés   </option>
 						<option   > Consolider et réhabiliter laire du barrage vert   </option>
-						<option   > Rיhabiliter la nappe à alfa   </option>
+						<option   > Réhabiliter la nappe à alfa   </option>
 						<option   > Protéger et gérer de manière rationnelle les parcours   </option>
 						<option   > Protéger les milieux oasiens   </option>
 						<option   > Réduire la pression sur les ressources naturelles  </option>

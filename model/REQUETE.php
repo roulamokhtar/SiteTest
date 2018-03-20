@@ -1426,7 +1426,7 @@ $indicateur=" SELECT * from iov, indicateurs,ppdri where
 indicateurs.id  = iov.codeindicateur and
  ppdri.Code_du_PPDRI = iov.code_projet AND
 
-codeindicateur='$_GET[codeindicateur]' and
+codeindicateur='$_GET[CodeIndicateur]' and
 code_projet='$_GET[code_projet]'
 
  ";
