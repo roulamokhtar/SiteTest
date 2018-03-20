@@ -38,14 +38,14 @@ $fname=$r->id;
  
   
 if(isset ($_POST['Modifier'])){
-$Indicateur=$_GET["CodeIndicateur"];
-$Indicateurs_specifique=$_POST['Indicateurs_specifique'];
+$Indicateur=$_GET["codeindicateur"];
+$Indicateurs_specifique=$_POST['indicateurs_specifique'];
 $Unite=$_POST['Unite'];
-$Base_2010_2014=$_POST['Base_2010_2014'];
-$ValeursCumulatives=$_POST['ValeursCumulatives'];
+$Base_2010_2014=$_POST['base_2010_2014'];
+$ValeursCumulatives=$_POST['valeurscumulatives'];
 $Frequence=$_POST['Frequence'];
-$SourcesDonneesMethodologie=$_POST['SourcesDonneesMethodologie'];
-$ResponsabiliteCollecteDonnees=$_POST['ResponsabiliteCollecteDonnees'];
+$SourcesDonneesMethodologie=$_POST['sourcesdonneesmethodologie'];
+$ResponsabiliteCollecteDonnees=$_POST['responsabilitecollectedonnees'];
 $Description=$_POST['Description'];
 
 
