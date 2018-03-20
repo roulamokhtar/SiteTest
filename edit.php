@@ -128,7 +128,7 @@ exit();
 }
 
 
- include_once("View/vueEdit.php");
+ include_once("view/vueEdit.php");
 
 
     } catch (Exception $e) {
