@@ -25,8 +25,8 @@ body {  padding-top: 50px;
 #map-canvas{
 	position:relative;
 	margin-top: 0px;
-	width:78%;
-    height:100%;
+	width:75%;
+    height:78%;
 }
 
 #infoWindow{	width: 200px;}
@@ -42,16 +42,123 @@ form.formform{
 }
  
 form.formMaps{
-	position:fixed;
-	background-color: rgba(128,128,128,0.9);
-	top: 50px;
+    background-color: rgba(128,128,128,0.9);
+
+	position:absolute;
+ 	top: 50px;
 	right: 2px;
 	padding: 0 20px;
 	border-radius: 5px;
-	width: 280px;
-	bottom: -30px;	
+	 
+	 
 
 }
+ 
+
+
+
+ 
+@media screen and (max-width: 1279px){
+   
+   form.formMaps{   width: 100%;
+    position:relative;
+    background-color:green;
+     padding-bottom: 10px;
+       top: 1px;
+    
+   } 
+  
+   
+}
+ #formulaire-legende{
+ position:absolute;
+  float: right;
+  right:314px;
+  background-color: rgba(128,128,128,0.9); 
+  width:  31%; 
+   padding-top: 25px;
+   top:25px;
+   height: 29%;
+ }
+@media screen and (max-width: 1279px){
+    #formulaire-legende{
+      position:relative;
+       width: 100%;
+       
+      background-color:none;
+       top:00px;
+       padding-top:1px;
+       height: none;
+       right:00px;
+   }
+     
+   
+}
+#floating-resultatRechercheMap {
+  position:relative;
+ padding-top: 20px;
+ background-color: yellow;
+     
+ width: 44%;
+    height: 27%;
+    
+
+}
+@media screen and (max-width: 1279px){
+    #floating-resultatRechercheMap{
+     width: 100%;
+      background-color:orange;
+       position:relative;
+       padding-top:1px;
+       height: none;
+       
+   }
+     
+   
+}
+@media screen and (max-width: 1279px){
+    #map-canvas{
+      
+     width:100%;
+ margin-top: 5px;
+       
+   }
+     
+   
+}
+@media screen and (max-width: 1279px){
+    #infoWindow{
+         width: 80px; 
+      
+       
+   }
+     
+   
+}
+#Afficher-action-localite{
+position:relative;
+ padding-top: 10px;
+ background-color: orange;
+     
+    width: 75%;
+    height: 6%;
+    text-align: center;
+
+
+    
+   } 
+@media screen and (max-width: 1279px){
+   
+   #Afficher-action-localite{ 
+     width: 100%;
+      background-color:white;
+       height: 40px;
+     
+}
+}
+
+
+
 form.formProjets{
 	position:fixed;
 	background-color: rgba(128,128,128,0.9);
@@ -64,7 +171,16 @@ form.formProjets{
 
 }
  
- 
+ @media screen and (max-width: 1279px){
+    form.formProjets{
+     width: 100%;
+      background-color:orange;
+       position:relative;
+       padding-top:none;
+   }
+     
+   
+}
 
  
 div.col-sm-15{
@@ -335,3 +451,6 @@ tbody td, thead th {
 tbody td:last-child, thead th:last-child {
     border-right: none;
 }
+ li{
+  { display: block; }
+ }
