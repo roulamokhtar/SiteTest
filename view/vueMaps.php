@@ -36,7 +36,7 @@
 					 <INPUT type="checkbox" name="finance[]" value="PSD-FORETS"  > PSD-FORET  </INPUT> 
 
  					 <h5 >Choisir une Localité :</h5>
-						<SELECT  name="localite" size="2"   ">
+						<SELECT  name="localite" size="2">
 							<?php foreach ($localites as $localite): ?>
 							 <option value="<?php echo $localite['ville_id']; ?>"><?php echo $localite['ville_nom_reel']; ?></option>
 							<?php endforeach; ?>
@@ -91,19 +91,21 @@
 				 if(!empty($_POST)){
 				 	extract($_POST);
 				 	// critère de communne
-				 	if(!empty($departement )) {
+				 	if(!empty($_POST['departement'] )) {
 						$nomC=$map->getNomDepartements($circonscription);
 						$nomCommune=$nomC->nom_departement;
 						?> Commune:
 						<?php echo "<font size='2' color='red'>". $nomCommune.   "</font> "     ;
  					} 
 					// critère de localité
-				 	if(!empty($localite )) {
+				 	if(!empty($_POST['localite'] )) {
 						$nomLoc=$map->getNomLocalites($circonscription);
+						 
 						$nomLocalitess= $nomLoc->ville_nom_reel;
+
 						?> Localite:
 						<?php echo "<font size='2' color='red'>". $nomLocalitess.   "</font> "     ;
- 					}
+ 					} 
  					// critère de années
 				 	if(!empty($_POST['annee'] )) {
 				$annee = $_POST['annee'];
@@ -181,7 +183,7 @@ Année:
 
 
 
-<div id="Afficher-action-localite"  >
+<div id="Afficheractionlocalite"  >
 	 
         	<label class="legend"  id="checkboxes" style="text-align: center ";     > <input type="checkbox" value="checkboxes" id="checkboxes"   > Afficher les actions</label>
 
