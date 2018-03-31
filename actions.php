@@ -21,7 +21,7 @@ include_once("model/REQUETE.php");
 
 
 
-$titre = "actions";
+$titre = "Actions";
 $page = "actions";//__variable pour la classe "active" du menu-header
 $map=new Map();
 $bdd = new REQ();

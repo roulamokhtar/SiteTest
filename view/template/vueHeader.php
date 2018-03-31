@@ -21,7 +21,7 @@
     <title><?php echo (!empty($title)) ? $title : ''; ?></title>
 
     <!-- Bootstrap core CSS -->
-  <!--  <link href="common/css/bootstrap.css" rel="stylesheet"> -->
+     <link href="common/css/bootstrap.css" rel="stylesheet">  
     <link href="common/css/bootstrap.min.css" rel="stylesheet">
      <!--  <link href="common/css/bootstrap-theme.css" rel="stylesheet"> -->
    <!--  <link href="common/css/bootstrap-theme.min.css" rel="stylesheet">-->

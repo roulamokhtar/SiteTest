@@ -6,13 +6,14 @@
 
 
 class BDD {
-	var $localhost = "", $user = "postgres", $password = "foret", $dbname='AA';
+	var $localhost = "localhost", $user = "id4084520_postgres", $password = "orangehouse", $dbname='id4084520_aa';
+
 		
 //__Effectue la connexion à la BDD
 //__Instancie et renvoie l'objet PDO associé
     function getBdd() {
-    	$bdd = new PDO("pgsql:host=localhost;dbname=AA", "postgres", "foret");
-   $bdd->exec("SET NAMES utf8");
+    $bdd = new PDO('mysql:host=localhost;dbname=id4084520_aa', $user, $pass);
+    $bdd->exec("SET NAMES utf8");
       $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 		
         return $bdd;
@@ -103,13 +104,3 @@ class BDD {
 	
 }
 $BDD = new BDD();
-
-
-
-
-
-
-
-
-
-

@@ -65,7 +65,7 @@ $localites=$map->getLocalite($circonscription);
         $finance = "";
         
       }
-if(!empty($localite )) {
+if(!empty($localite)) {
 				$localite = $_POST['localite'];
 
 				
@@ -262,7 +262,7 @@ $json .= '"'.utf8_decode($result->nombreprojets).'",';//9
 		//connexion postgresql
 
 try {
-  $pdo = new PDO("pgsql:host='ec2-50-17-206-214.compute-1.amazonaws.com';dbname=dcn748odolklt7", "vpxvhvftohqcoq", "57606f9441058e43b836e87aa125de6a843803c3e671bf9e254654723119abac");
+  $pdo = new PDO("pgsql:host=localhost;dbname=AA", "postgres", "foret");
    $pdo->exec("SET NAMES utf8");
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
@@ -270,7 +270,7 @@ try {
 
 } catch (Exception $e) {
 
-  echo "Pas de connexion essayez!!!!!";
+  echo "Pas de connexion";
 }
 //$bdd = new dbconnect();
 /*
@@ -482,41 +482,6 @@ $polygone .=  "  and observation =''"  ;		}
 
 $polygone.=" GROUP  BY ppdri.Code_du_PPDRI,action.code_actions ,polygone.geom 
  ,code_commune,polygone.annee , paiement,realisation_physique,action.quantite,unit ";
-/*
-		if(!empty($departement)) {
-				// $sql .= "  and communeligne = " . pg_escape_string($departement);
-				 //$point .= "  and code_commune = " . pg_escape_string($departement);
-				// $polygone .="  and code_commune = " . pg_escape_string($departement);
-}
-
-if(!empty($Annee)) {
-				// $sql .= "  and anneeligne =" . pg_escape_string($Annee);
-				// $point .= "  and anneepoint =" . pg_escape_string($Annee);
-			     $polygone .="  and anneepolygone = " . pg_escape_string($Annee);
-
-}
-/*
-if (!empty($populationStart)){
-			$sql .=  " HAVING SUM(realisation_financiere.paiement)*100/SUM(action.Montant ) >= " .$populationStart;
-			$point .=  " HAVING SUM(realisation_financiere.paiement)*100/SUM(action.Montant ) >= " .$populationStart;
-			$polygone .=  " HAVING SUM(realisation_financiere.paiement)*100/SUM(action.Montant ) >= " .$populationStart;
-
-		}
-		
-		if (!empty($populationEnd)){
-			$sql .= " and SUM(realisation_financiere.paiement)*100/SUM(action.Montant ) <= ".$populationEnd;
-			$point .=  " HAVING SUM(realisation_financiere.paiement)*100/SUM(action.Montant ) >= " .$populationStart;
-			$polygone .=  " HAVING SUM(realisation_financiere.paiement)*100/SUM(action.Montant ) >= " .$populationStart;				 
-		} 
-
- $sql.=" GROUP  BY Code_du_PPDRI,action.code_ppdri,action.code_actions ,realisation_physique.realisation_physique,ppdri_ligne.ligne_geom ,realisation_financiere.paiement,anneeligne,communeligne";
-
-
- $point.=" GROUP  BY Code_du_PPDRI,action.code_ppdri,action.code_actions,realisation_physique.realisation_physique,realisation_financiere.paiement,ppdri_point.geom,ppdri_point.code_commune,anneepoint, ppdri_point.gid  ";
-
-
- $polygone.=" GROUP  BY Code_du_PPDRI,action.code_ppdri,action.code_actions,realisation_physique.realisation_physique,realisation_financiere.paiement,ppdri_point.geom, anneepolygone";
-*/
 
 //requete ligne
   
@@ -725,52 +690,7 @@ $pdo=null;
      	require_once("view/vueMaps.php");
        
     
-/*
-# Build GeoJSON feature collection ppdriTaher
-//  $reqppdri = "SELECT *, public.ST_AsGeoJSON(public.ST_Transform((geom),4326),6) AS st FROM polygonetaher ";
 
-  $rp = $pdo->prepare($reqppdri);
-
-$rp->execute();
-
-
-$geojsonTAHER = array(
-   'type'      => 'FeatureCollection',
-   'features'  => array()
-);
-# Loop through rows to build feature arrays
-
-while ($rows =  $rp->fetch(PDO::FETCH_ASSOC)) {
-    $properties = $rows;
-    # Remove geojson and geometry fields from properties
-    unset($properties['st']);
-    unset($properties['geom']);
-    $feature = array(
-         'type' => 'Feature',
-         'properties' => $properties,
-         'geometry' => json_decode($rows['st'], true),
-    );
-    # Add feature arrays to feature collection array
-    array_push($geojsonTAHER['features'], $feature);
-};
-
-//header('Content-type: application/json');
-$w=json_encode($geojsonTAHER, JSON_NUMERIC_CHECK);
-
-//echo $p;
-//$mokh= json_encode($geojson, JSON_NUMERIC_CHECK);
-$filenamesPPDRItaher= "common/js/geojsonTAHER.geojson";
-
-if (file_exists($filenamesPPDRItaher)){
-      unlink($filenamesPPDRItaher);
-    }else{
-      echo "le fichier Géojson TAHER n'existe pas.<br />";
-    }
-
-    file_put_contents($filenamesPPDRItaher,utf8_encode($w));
-    chmod($filenamesPPDRItaher, 0777);
-
-*/
 
 
 	

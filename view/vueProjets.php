@@ -6,23 +6,23 @@
 la vue
 */
 include_once("template/vueHeader.php");
-include_once("template/vueNavbar.php"); 
+include_once("template/vueNavbar.php");
+  include_once("template/vueFooter.php");  
 
  ?>
 
-<!DOCTYPE html> 
-<html lang="fr"> 
+
  <div>
 	<head>
 		<meta charset="utf-8">
 		<title>Administration</title>
 		<script type="text/javascript" src= "jquery.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
 	</head>
 	<body>
-
-		 			<div id="form">
+ 		 			 
 
 		<form method="post" id="form"  class="  formProjets" role="form" action="projets.php">
 			
@@ -105,10 +105,10 @@ include_once("template/vueNavbar.php");
 					
 		 <button type="submit" class="btn btn-default" id="submit" name="submit">Recherche</button> 
 		</form>
-	</div>
+	 </div>
 
 
-<div id="res">
+ 
 
 <table class =" projet scrollProjet  ">
 	<thead  >
@@ -190,6 +190,6 @@ include_once("template/vueNavbar.php");
 </div>
 			 		 
 </body>
-</div>
+ 
 </div>
 

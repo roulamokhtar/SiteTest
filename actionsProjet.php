@@ -17,6 +17,8 @@ Contrôleur de notre page de projet
 include_once("model/BDD.php");
 include_once("model/REQUETE.php");
 
+$titre = "Projets";
+$page = "projets";//__variable pour la classe "active" du menu-header
 
 
 try {

@@ -24,18 +24,20 @@ body {  padding-top: 50px;
 /*********************** carte Google Maps ***********************/
 #map-canvas{
 	position:relative;
-	margin-top: 0px;
+	margin-top: 1px;
 	width:75%;
-    height:78%;
+    height:73%;
 }
-
-#infoWindow{	width: 200px;}
+ 
 #infoWindow p.ville{	font-weight:bold;}
-#infoWindow p.habitants{}
+#infoWindow p.habitants{
+   width: 50px;
+}
 #infoWindow p.indent{
-	text-indent: 25px;
-	font-size:12px;
-	line-height: 10px;
+	text-indent: 1px;
+	font-size:10px;
+	line-height: 4px;
+  
 }
 form.formform{
     width: 30%;
@@ -43,12 +45,13 @@ form.formform{
  
 form.formMaps{
     background-color: rgba(128,128,128,0.9);
-
+width: 315px;
 	position:absolute;
  	top: 50px;
 	right: 2px;
 	padding: 0 20px;
 	border-radius: 5px;
+  height:100%;
 	 
 	 
 
@@ -63,8 +66,12 @@ form.formMaps{
    form.formMaps{   width: 100%;
     position:relative;
     background-color:green;
-     padding-bottom: 10px;
+     padding-bottom: 1px;
        top: 1px;
+       
+       padding: 0 1px;
+height:auto;
+text-align: center;
     
    } 
   
@@ -84,33 +91,38 @@ form.formMaps{
     #formulaire-legende{
       position:relative;
        width: 100%;
-       
+       float: none;
       background-color:none;
-       top:00px;
-       padding-top:1px;
-       height: none;
+       top:2px;
+       padding-top:2px;
+      height:auto;
        right:00px;
+       
+         
    }
+     #formulaire-legende li{
+      display: inline-block; 
+     }
      
    
 }
 #floating-resultatRechercheMap {
   position:relative;
- padding-top: 20px;
- background-color: yellow;
-     
+ padding-top: 2px;
  width: 44%;
-    height: 27%;
+height: 27%;
     
 
 }
 @media screen and (max-width: 1279px){
     #floating-resultatRechercheMap{
+
      width: 100%;
       background-color:orange;
        position:relative;
-       padding-top:1px;
-       height: none;
+       padding-top:00px;
+       height: auto;
+       text-align: center;
        
    }
      
@@ -121,27 +133,30 @@ form.formMaps{
       
      width:100%;
  margin-top: 5px;
+ height:80%;
        
    }
      
    
 }
 @media screen and (max-width: 1279px){
-    #infoWindow{
-         width: 80px; 
-      
-       
-   }
+   
+        
+     #infoWindow {
+ width: 20%; 
+     }
+
      
    
 }
-#Afficher-action-localite{
+
+#Afficheractionlocalite{
 position:relative;
- padding-top: 10px;
+ padding-top: 2px;
  background-color: orange;
      
     width: 75%;
-    height: 6%;
+    height: auto;
     text-align: center;
 
 
@@ -149,10 +164,12 @@ position:relative;
    } 
 @media screen and (max-width: 1279px){
    
-   #Afficher-action-localite{ 
+   #Afficheractionlocalite{ 
      width: 100%;
       background-color:white;
-       height: 40px;
+       padding-top: none;
+       height: auto;
+
      
 }
 }
@@ -177,6 +194,8 @@ form.formProjets{
       background-color:orange;
        position:relative;
        padding-top:none;
+       text-align: center;
+       top: 2px;
    }
      
    
@@ -213,7 +232,15 @@ form.formMaps2{
 	padding: 0 0px;
 	border-radius: 10px;
 	width: 100%;
-	height:200px;
+	height:250px;
+  }
+  @media screen and (max-width: 1279px) {
+form.formMaps2{
+ position:relative;
+  height:auto;
+  background-color:orange;
+}
+
   }
    
  form.resultat{
@@ -225,16 +252,9 @@ form.formMaps2{
 	border-radius: 10px;
 	width: 100%;
 	height:50px;
+  }
 }
-div.fixed {
-    position: fixed;
-	top: 75px;
-    bottom: 300;
-    right: 260px;
-    width: 100px;
-    border: 3px solid #73AD21;
-
-}
+ 
 
  table.action {
          width: 100%;
@@ -242,11 +262,39 @@ div.fixed {
  
       
  }
+ @media and (max-width: 1279px){
+table.action{
+  top: auto;
+}
+
+ }
  table.projet {
          width: 67%;
         top: 260px;
-          
+          font-size: 5px;
  }
+ @media screen and (max-width: 1279px){
+   
+     table.projet{ 
+     width: 100%;
+      background-color:white;
+       padding-top: none;
+       font-size: 5px;
+
+     
+}
+}
+@media screen and (max-width: 1279px){
+   
+     .res{ 
+     width: 100%;
+      background-color:red;
+       padding-top: none;
+       font-size: 5px;
+
+     
+}
+}
   table.graph {
     text-align:  center;
         
@@ -452,5 +500,5 @@ tbody td:last-child, thead th:last-child {
     border-right: none;
 }
  li{
-  { display: block; }
+    display: block;  
  }

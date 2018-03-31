@@ -1410,8 +1410,8 @@ public function selectForm (){
 $bdd = parent::getBdd();
 
 	$realisation="SELECT * FROM action, realisation_physique, realisation_financiere, ppdri  WHERE
-	realisation_physique.code = action.code_actions AND
-	realisation_financiere.code =action.code_actions AND
+	realisation_physique.Code = action.Code_Actions AND
+	realisation_financiere.Code =action.Code_Actions AND
  ppdri.code_du_ppdri=action.code_ppdri and
  code_actions='$_GET[code_actions]'  ";
 
@@ -1421,12 +1421,12 @@ $actions=$res->fetch(PDO::FETCH_OBJ);
 		 			}
 public function selectFormIndicateur (){
 $bdd = parent::getBdd();
-//codeindicateur represente est 
+//CodeIndicateur represente est 
 $indicateur=" SELECT * from iov, indicateurs,ppdri where 
 indicateurs.id  = iov.codeindicateur and
  ppdri.Code_du_PPDRI = iov.code_projet AND
 
-codeindicateur='$_GET[CodeIndicateur]' and
+CodeIndicateur='$_GET[CodeIndicateur]' and
 code_projet='$_GET[code_projet]'
 
  ";

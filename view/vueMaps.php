@@ -41,26 +41,26 @@
 							 <option value="<?php echo $localite['ville_id']; ?>"><?php echo $localite['ville_nom_reel']; ?></option>
 							<?php endforeach; ?>
 						</SELECT >
- <h5 >Programme:
+ <h5 >Programme:</h5> 
 
 					<INPUT type="checkbox" name="programme[]" value="TBV" > TBV</INPUT> 
 					<INPUT type="checkbox" name="programme[]" value="GEPF" > GEPF </INPUT> 
-					<INPUT type="checkbox" name="programme[]" value="CEN" > CEN</INPUT></h5>
+					<INPUT type="checkbox" name="programme[]" value="CEN" > CEN</INPUT> 
 				
-					 <h5 >Choisir un taux de paiement :
+					 <h5> Choisir un taux de paiement :</h5>
 					<input type="radio" name="habitants" value="egal0" id="egal0" /> <label for="egal0">= 0 %</label> <br> 
 					  
-					<input type="radio" name="habitants" value="inf100" id="inf100" /> <label for="inf100">Inférieur à 100 %</label>  
-					<input type="radio" name="habitants" value="egal100" id="egal100" /> <label for="egal100">Egal à 100 %</label>  </h5> 
+					<input type="radio" name="habitants" value="inf100" id="inf100" /> <label for="inf100">Inférieur à 100 %</label> <br>  
+					<input type="radio" name="habitants" value="egal100" id="egal100" /> <label for="egal100">Egal à 100 %</label>  
 					
 					<div id ="etat">
 						
 						<h4>Etat actions </h4>
 					 
 					 <input type="radio" name="etat"  id='etat' value="validee"  /> <label class="labelinput"  > Validée</label>  
-					 <input type="radio" name="etat"  id='etat' value="annulee"  /> <label class="labelinput"  >Annulée</label>   
-					 <input type="radio" name="etat" id='etat'  value="volumeAnnulée"  /> <label class="labelinput"   >avec RAR</label> </br> 
-					  <input type="radio" name="etat"  id='etat' value="volumesansrar"  /> <label class="labelinput"  >sans RAR</label>  
+					 <input type="radio" name="etat"  id='etat' value="annulee"  /> <label class="labelinput"  >Annulée</label> </br>  
+					 <input type="radio" name="etat" id='etat'  value="volumeAnnulée"  /> <label class="labelinput"   >avec RAR</label>  
+					  <input type="radio" name="etat"  id='etat' value="volumesansrar"  /> <label class="labelinput"  >sans RAR</label> </br>  
  
 					  <input type="radio" name="cloture" value="ok"    /> <label class="labelinput"   >PV définitif</label>   
 					 <input type="radio" name="cloture" value=""    /> <label class="labelinput"   > sans PV définitif</label> <br>  <button type="submit"   id="submit">Rechercher</button>   
@@ -183,28 +183,29 @@ Année:
 
 
 
-<div id="Afficheractionlocalite"  >
+
+
+		 <div id="formulaire-legende"  >
+			
+			<h4 color='brown'  font-weight='bold'  align='center' > Couches de données  </h4>
+			 
+				<ul>
+		<li><input type="checkbox" id="layer_05" onclick="toggleLayers(5);"/>Circonscriptions</li>  
+        <li><input type="checkbox" id="layer_01" onclick="toggleLayers(1);"/>Communes</li>  
+		<li>   <input type="checkbox" id="layer_02" onclick="toggleLayers(2);"/> Les reboisements 2000-2010</li> 
+		<li> <input type="checkbox" id="layer_03" onclick="toggleLayers(3);"/> Les Bassins versant</li> 
+		<li>  <input type="checkbox" id="layer_04" onclick="toggleLayers(4);"/> Les FORETS</li>
+		</ul>  
+</div>
+
+	<div id="Afficheractionlocalite"  >
 	 
         	<label class="legend"  id="checkboxes" style="text-align: center ";     > <input type="checkbox" value="checkboxes" id="checkboxes"   > Afficher les actions</label>
 
 			<label class="legend" id="checkboxer" style="text-align: center"; ><input type="checkbox" value="checkboxer" id="checkboxer"   checked   > Afficher les localités</label>
      
      
-		 </div>
-
-		 <div id="formulaire-legende"  >
-			
-			<h4> Couches de données  </h4>
-			 
-				
-		<li><input type="checkbox" id="layer_05" onclick="toggleLayers(5);"/>Circonscriptions</li>  
-        <li><input type="checkbox" id="layer_01" onclick="toggleLayers(1);"/>Communes</li>  
-		<li>   <input type="checkbox" id="layer_02" onclick="toggleLayers(2);"/> Les reboisements 2000-2010</li> 
-		<li> <input type="checkbox" id="layer_03" onclick="toggleLayers(3);"/> Les Bassins versant</li> 
-		<li>  <input type="checkbox" id="layer_04" onclick="toggleLayers(4);"/> Les FORETS</li>  
-</div>
-
-		  
+		 </div>	  
 		 
 	<div id="map-canvas"></div>
 	

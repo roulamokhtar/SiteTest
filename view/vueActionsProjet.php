@@ -6,6 +6,8 @@ la vue
 include_once("model/REQUETE.php");
 include_once("template/vueHeader.php");
 include_once("template/vueNavbar.php"); 
+  include_once("template/vueFooter.php");  
+
  ?>
 
 <!DOCTYPE html> 
@@ -14,26 +16,34 @@ include_once("template/vueNavbar.php");
 	<head>
 		<meta charset="utf-8">
 		<title>Administration</title>
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 		 
 	</head>
 	<body>
 	
- 	<div> 
-<br/>
- 	<strong> <u>Statistique du PPDRI</u>: Localité:<?php echo '<font size="3" color="red"  >  '.$nomLocalite.'</font>' ;  ?> code du projet: <?php echo '<font size="3" color="red">  '. $codeProjet.'   </font>'  ;  ?> Commune de : <?php echo '<font size="3" color="red">  '. $commune.'   </font>'  ;  ?>  </strong>
+ 	<div style="width:100%"> 
+ 
+ 	<strong> <u>Statistique du PPDRI: </u></strong></br>
+
+ 		 Localité:<?php echo '<font size="1" color="red"  >  '.$nomLocalite.'</font>' ;  ?> 
+ 		 code du projet: <?php echo '<font size="2" color="red">  '. $codeProjet.'   </font>'  ;  ?>
+ 		  Commune de : <?php echo '<font size="2" color="red">  '. $commune.'   </font>'  ;  ?>  
  	</div>
- <div><p>  Nombre d'actions trouvés: <?php 
 
-if($tauxprojets!=null){
+    <div>
+    Nombre d'actions trouvés: <?php 
+
+			if($tauxprojets!=null){
  	  
-  echo '<font size="3" color="red">  '. $s .'   </font>'  ;  
- 	}else{
- 		echo  '<font size="3" color="red">  '."0".' </font>';
- 	}
+  					echo '<font size="2" color="red">  '. $s .'   </font>'  ;  
+ 			}else{
+ 					echo  '<font size="2" color="red">  '."0".' </font>';
+ 				}
  	?>
- </p>
+  
 
-
+</div>
   
  <div><p> 
  Montant total du projet est de : <?php
@@ -46,7 +56,8 @@ echo '<font size="3" color="red">  '. number_format($tauxprojets->montantprojet,
  	?>
  </p>
 
-<div><p> Montant des paiement est de :<?php
+<div>
+<p> Montant des paiement est de :<?php
 if($tauxprojets!=null){
  	  
 echo '<font size="3" color="red">  '.number_format($tauxprojets->totalpaiement,2,',',' ')  .' DA  </font>'; 
@@ -85,7 +96,7 @@ echo '<font size="3" color="red">  '.$status.'</font>';
  </div>
 
 
-<h4 align="center"> <a href="suiviEvaluation.php?Code_du_PPDRI=<?php echo $codeProjet  ; ?>"> Cadre logique du projet en cours </a></h4>
+<h4 align="center"> <a href="SuiviEvaluation.php?Code_du_PPDRI=<?php echo $codeProjet  ; ?>"> Cadre logique du projet en cours </a></h4>
 
 
 <div class="table-responsive" >
@@ -148,7 +159,7 @@ echo "";
 <?php if( $a=$bdd->tauxAction() ){?>
 
 <div   >
-<table class =" action scroll table table-hover  ">
+<table class =" action scroll table table-hover   table-condensed     ">
 	<thead >
 <tr>
 

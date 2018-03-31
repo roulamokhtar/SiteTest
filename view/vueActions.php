@@ -1,22 +1,16 @@
 <?php 
-include_once("model/BDD.php");
-include_once("model/Map.php");
-include_once("model/REQUETE.php");
+
 include_once("template/vueHeader.php");
 include_once("template/vueNavbar.php");
 
 ?>
-<!DOCTYPE html>
 
-<html lang="fr"> 
-   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-   	<script type="text/javascript" src="common/js/form/jquery.validate.min.js"></script>
- 
+	
+		  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<head>
-		<meta charset="utf-8">
-		<title>Administration</title>
-		 <script>
+    	<script  > 
+		
+		 
 function downloadCSV(csv,filename){
 	var csvFile;
 
@@ -63,127 +57,181 @@ function exportTableToCSV(filename){
     downloadCSV(csv.join("\n"), filename);
 }
 </script>
-			<link rel="stylesheet" href="../css/styleAction.css" />
+			 
 
 
 	</head>
+
 	<body>
-	 
+	 <div> 
 		<form method="post"     class="  formMaps2"   action="actions.php">
-		<div class="floating-boxCommune">
-					<h4> Commune :</h4>
-					<select name="departement"   size="3" class="dropdown" ">
-					 
-						<?php foreach ($departements as $departement): ?>
-						 <option value="<?php echo $departement['id']; ?>"><?php echo $departement['departement']; ?></option>
-						<?php endforeach; ?>
-				</select>
-					 
-				</div>
-			 <div class="floating-boxLocalite">
-					 
-						<h4 > Localité :</h4>
-						<SELECT  name="localite" size="3" class="dropdown"  ">
-							<?php foreach ($localites as $localite): ?>
-							 <option value="<?php echo $localite['ville_id']; ?>"><?php echo $localite['ville_nom_reel']; ?></option>
+		<div>
+			<div class="form-group">			 
+				<label class="col-sm-1 control-label"> Commune </label>
+					 <div class="col-sm-3"> 
+						<select name="departement"     size="3"  >
+						 
+							<?php foreach ($departements as $departement): ?>
+							 <option value="<?php echo $departement['id']; ?>"><?php echo $departement['departement']; ?></option>
 							<?php endforeach; ?>
-						</SELECT >
+						</select>
+					</div> 
+			</div>
+			
+		 
+			<div class="form-group">			 
+							<label class="col-sm-1 control-label"> Localité </label>
+					<div class="col-sm-3"> 
+							<select   name="localite" size="3"    >
+								<?php foreach ($localites as $localite): ?>
+								 <option value="<?php echo $localite['ville_id']; ?>"><?php echo $localite['ville_nom_reel']; ?></option>
+								<?php endforeach; ?>
+							</select >
+					</div>
+			</div>
+			 
+
+				<div class="form-group">			 
+							<label class="col-sm-1 control-label">Action </label>
+					<div class="col-sm-3"> 
+								 
+									<SELECT  name="nomactions" size="3"     >
+										<?php foreach ($Nomactions as $nomactions): ?>
+										 <option  value="<?php echo $nomactions['id'] ; ?>"><?php echo $nomactions['nomactions']; ?></option>
+										<?php endforeach; ?>
+									</SELECT >
+					</div>
 				</div>
-			<div class="floating-boxTyeAction"  >
-								<h4 > Type action :</h4>
-								<SELECT  name="nomactions" size="3" class="dropdown"   >
-									<?php foreach ($Nomactions as $nomactions): ?>
-									 <option  value="<?php echo $nomactions['id'] ; ?>"><?php echo $nomactions['nomactions']; ?></option>
-									<?php endforeach; ?>
-								</SELECT >
-							</div>
-			<div class="floating-boxTemeTauxPhysique">
-								<h4 > Taux physique</h4>
-								<SELECT  name="physique" size="3" class="dropdown"  >
-								  
-								<option   value="00"> Action non entammée </option>
-								<option   value="50"> inférieur ou égal  à 50 % </option>
-								<option   value="75"> inférieur ou égal  à 75 % </option>
-								<option  value="99"> inférieur ou égal  à 99 % </option>
-								<option   value="100"> Action Términée  </option>	 
-				 
-								</SELECT >
+			</div>
+
+			<div>
+				<div class="form-group">			 
+							<label class="col-sm-1 control-label"> Taux physique</label>
+					<div class="col-sm-3"> 
+									 
+									<SELECT  name="physique" size="3" class="dropdown"  >
+									  
+									<option   value="00"> Action non entammée </option>
+									<option   value="50"> inférieur ou égal  à 50 % </option>
+									<option   value="75"> inférieur ou égal  à 75 % </option>
+									<option  value="99"> inférieur ou égal  à 99 % </option>
+									<option   value="100"> Action Términée  </option>	 
+					 
+									</SELECT >
 
 					</div>
-				<div class="floating-boxTheme">
-					 
-						<h4 >Thème fédérateur</h4>
-						<SELECT  name="composante" size="3"     >
-							<?php foreach ($composantes as $composante): ?>
-							 <option value="<?php echo $composante['composante']; ?>"><?php echo $composante['composante']; ?></option>
-							<?php endforeach; ?>
-						</SELECT >
 				</div>
- 
+					
+	 
 
 
-				<div class="floating-boxAnnee"  >
-									<h4 > Année :</h4>
-								<INPUT type="checkbox" name="annee[]" value="2010"  > 2010 </INPUT>  
-								<INPUT type="checkbox" name="annee[]" value="2011"  > 2011</INPUT>   
-								<INPUT type="checkbox" name="annee[]" value="2012"  > 2012 </INPUT> </br>
-								<INPUT type="checkbox" name="annee[]" value="2013"  > 2013 </INPUT>   
-								<INPUT type="checkbox" name="annee[]" value="2014"  > 2014 </INPUT>  
-				 				</div>
-
-				
-					<div class="floating-boxEtatAction">
-
-					 <h4>Etat actions </h4>  
-					 
-					 <input type="radio" name="etat" value="validee"  /> <label class="labelinput"  > Validée  </label>  
-					 <input type="radio" name="etat" value="annulee"  /> <label class="labelinput"  > Annulée</label>   
-					 <input type="radio" name="etat" value="volumeAnnulée"  /> <label class="labelinput"   >avec RAR</label> </br>
-					  <input type="radio" name="etat" value="volumesansrar"  /> <label class="labelinput"  > Action sans RAR</label>  
- 
-					  <input type="radio" name="cloture" value="ok"   /> <label class="labelinput"   >PV définitive </label>  
-					 <input type="radio" name="cloture" value=""   /> <label class="labelinput"   > sans PV définitive  </label>  
+					
 
 				</div>
-				 <div class="floating-boxTauxFinancier">
-					<h4   > Taux financier :</h4>
-					 
-					 <input type="radio" name="habitants" value="egal0" id="egal0" /> <label class="labelinput"  >égal à 0 %</label>   
-					<input type="radio" name="habitants" value="moins10" id="moins10"   /> <label class="labelinput"  ><= 10 %</label>  
-					<input type="radio" name="habitants" value="moins25" id="moins25"   /> <label class="labelinput" ><= 25%</label>  </br>
-					<input type="radio" name="habitants" value="moins50" id="moins50"  /> <label class="labelinput" ><= 50 %</label>  
-					<input type="radio" name="habitants" value="moins75" id="moins75"   /> <label class="labelinput" ><= 75 %</label>   
-					<input type="radio" name="habitants" value="inferieur100" id="inferieur100" class="labelinput" /> <label  ><  100 %</label>  
-					<input type="radio" name="habitants" value="100" id="100"  /> <label class="labelinput" > = 100 %</label>
-				</div>
-  
-				<div class="floating-boxSourceFinancement"  >
-					<h4 >Source de financement :</h4>
-					 <INPUT type="checkbox" name="finance[]" value="FNDR"  > Ligne 2</INPUT>  
-					 <INPUT type="checkbox" name="finance[]" value="FSAEPEA"  > Ligne 3</INPUT>   
-					 <INPUT type="checkbox" name="finance[]" value="PSD-FORETS"  > PSD-FORETS </INPUT>
-					<button type="submit"   id="submit" name="submit">Recherche</button>
-	    
- 				</div>
 
-  
-		</form>
+				<div>	
+						<div class="form-group">			 
+							<label class="col-sm-1 control-label">Etat actions</label>
+							<div class="col-sm-3"> 
+
+								<input type="radio" name="etat" value="validee" >  Validée  </input>  
+								<input type="radio" name="etat" value="annulee"  >  Annulée</input>   
+								<input type="radio" name="etat" value="volumeAnnulée"   > avec RAR </input>    
+								<input type="radio" name="etat" value="volumesansrar" > Action sans RAR </input>  
+				 				<input type="radio" name="cloture" value="ok" > PV définitive</input>  
+								<input type="radio" name="cloture" value="" > </input>  
+							</div>
+						</div>
+						<div class="form-group">			 
+								<label class="col-sm-1 control-label">Taux financier</label>
+							<div class="col-sm-3"> 
+
+						  
+							 
+								 <input type="radio" name="habitants" value="egal0" id="egal0" /> <label class="labelinput"  >égal à 0 %</label>   
+								<input type="radio" name="habitants" value="moins10" id="moins10"   /> <label class="labelinput"  ><= 10 %</label>  
+								<input type="radio" name="habitants" value="moins25" id="moins25"   /> <label class="labelinput" ><= 25%</label>  </br>
+								<input type="radio" name="habitants" value="moins50" id="moins50"  /> <label class="labelinput" ><= 50 %</label>  
+								<input type="radio" name="habitants" value="moins75" id="moins75"   /> <label class="labelinput" ><= 75 %</label>   
+								<input type="radio" name="habitants" value="inferieur100" id="inferieur100" class="labelinput" > <label  100 %</label>  
+								<input type="radio" name="habitants" value="100" id="100"  /> <label class="labelinput" > = 100 %</label>
+							</div>
+						</div>
 	  
+					<div class="form-group">			 
+								<label class="col-sm-1 control-label">Source de financement</label>
+							<div class="col-sm-3"> 
+	 
+								 <INPUT type="checkbox" name="finance[]" value="FNDR"  > Ligne 2</INPUT>  
+								 <INPUT type="checkbox" name="finance[]" value="FSAEPEA"  > Ligne 3</INPUT>   
+								 <INPUT type="checkbox" name="finance[]" value="PSD-FORETS"  > PSD-FORETS </INPUT>
+						
+		    
+	 						</div>
 
-<div class="div-table-resultat-action"  >
+	 						<div class="form-group">			 
+							<label class="col-sm-1 control-label"> Année</label>
+						<div class="col-sm-4"> 
+									
+									<INPUT type="checkbox" name="annee[]" value="2010"  > 2010 </INPUT>  
+									<INPUT type="checkbox" name="annee[]" value="2011"  > 2011</INPUT>   
+									<INPUT type="checkbox" name="annee[]" value="2012"  > 2012 </INPUT> 
+									<INPUT type="checkbox" name="annee[]" value="2013"  > 2013 </INPUT>   
+									<INPUT type="checkbox" name="annee[]" value="2014"  > 2014 </INPUT>  
+					 	</div>
+					 </div>
+					 <div class="form-group">			 
+							<label class="col-sm-1 control-label"> Année</label>
+						<div class="col-sm-4"> 
+									
+									<INPUT type="checkbox" name="annee[]" value="2010"  > 2010 </INPUT>  
+									<INPUT type="checkbox" name="annee[]" value="2011"  > 2011</INPUT>   
+									<INPUT type="checkbox" name="annee[]" value="2012"  > 2012 </INPUT> 
+									<INPUT type="checkbox" name="annee[]" value="2013"  > 2013 </INPUT>   
+									<INPUT type="checkbox" name="annee[]" value="2014"  > 2014 </INPUT>  
+					 	</div>
+					 </div>
+
+					 <div class="form-group">			 
+							<label class="col-sm-1 control-label"> Thème fédérateur</label>
+						<div class="col-sm-2"> 
+							 
+								 
+								<SELECT  name="composante" size="3"     >
+									<?php foreach ($composantes as $composante): ?>
+									 <option value="<?php echo $composante['composante']; ?>"><?php echo $composante['composante']; ?></option>
+									<?php endforeach; ?>
+								</SELECT >
+						</div>
+					</div>
+
+
+	 				<div class="form-group">
+	 					<button type="submit"   id="submit" name="submit">Recherche</button>
+	 				</div>
+	 			</div>
+	 		</div>
+
+	  
+			</form>
+		  </div>
+
+	<div >
 
 <button onclick="exportTableToCSV('members.csv')"> Exporter les resultats dans Excel	</button>	
 
 <a href="graph.php<?php if($_SESSION['name'] !="ADMIN"){echo '?circonscription='.$circonscription ;}else{echo "";} ?>"> Histogramme des clotures  par communes </a>  " "
 <a href="graphCirconscription.php<?php if($_SESSION['name'] !="ADMIN"){echo '?circonscription='.$circonscription ;}else{echo "";} ?>"> Histogramme des clotures par circonscriptions  </a>
+</div>
  
-<table    class="scroll action   table-bordered"  >
+<table    class="scroll action   table-bordered  table-responsive  "  >
 	
 	<thead  >
  <tr  >
 		<th>DETAIL </th>
  
   		<th>ANNEE </th>
+  		<th>code action </th>
 		<th>Circonscrition </th> 
  
  		<th>COMMUNE </th>
@@ -211,6 +259,7 @@ foreach ( $CODE as $actions) {
 <td> <a href="edit.php?code_actions=<?php echo $actions->code_actions;?>"> Modifier  </a> </td>
  
  		<td > <?php echo  $actions->annee;?></td>
+ 		<td > <?php echo  $actions->code_actions;?></td>
 		<td > <?php echo stripcslashes($actions->circonscription) ;?></td>
  
  		<td > <?php echo stripcslashes($actions->commune) ;?></td>
@@ -397,3 +446,4 @@ $(window).resize(function() {
 
 
 </script>
+	<?php include_once("template/vueFooter.php"); ?>

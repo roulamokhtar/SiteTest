@@ -95,6 +95,7 @@ var markers = [];
 		
 		map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
+       
                
   setMarkers(map,marker);
 
@@ -163,9 +164,9 @@ var infoWindow = new google.maps.InfoWindow({map:map});
 
             infoWindow.setPosition(pos);
             infoWindow.setContent('vous etes ici.');
-            map.setCenter(pos);
+            //map.setCenter(pos);
           }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
+            handleLocationError(true, infoWindow  );
           });
         } else {
           // Browser doesn't support Geolocation
@@ -206,7 +207,7 @@ var infoWindow = new google.maps.InfoWindow({map:map});
   
 
 
-    +"<p class='habitants'>Nature de l'action:   <strong> <font size='2' color='blue' > " +action+ "    </font> </strong> </p>"
+    +"<p class='habitants'>Nature de l'action:   <strong> <font size='1' color='blue' > " +action+ "    </font> </strong> </p>"
          +"<p class='habitants'>Source de financement:   <strong> <font size='2' color='blue' > " +source_financement+ "    </font> </strong> </p>"
 +"<p class='habitants'>Volume prévu  :   <strong> <font size='2' color='blue' > "+ new Intl.NumberFormat().format(quantite)+
    "    "+unite+"   </font> </strong> </p>"
@@ -219,7 +220,10 @@ var infoWindow = new google.maps.InfoWindow({map:map});
     
     +"</div>");
   // position the infowindow on the marker
-
+var infoWindow = new google.maps.InfoWindow({
+         
+          maxWidth: 100
+        });
    infowindow.setPosition(event.latLng); // ここでinfowindowの位置を指定  // anchor the infowindow on the marker
   infowindow.setOptions({pixelOffset: new google.maps.Size(0,0)});
   infowindow.open(map);
@@ -456,12 +460,11 @@ function setMarkers(map,locations){
 						"<div  "
 							+"<p class='ville'><strong> <font size='2' color='red'   >"   +station[2]+   "</font> </strong></p>"
                +"<p class='habitants'>Nombre de Projet(s) Trouvé(s) :   <strong> <font size='2' color='red'   > " +station[9]+  "     </font> </strong> </p>"
-               +"<p class='habitants'>Projet(s) Trouvé(s) :    <strong> <font size='2' color='red'   > "   +station[8]+ "     </font> </strong> </p>"
-
-             +"<p class='habitants'>Code du projet et taux financier par actions:</br>  <strong> <font size='2' color='red'> " +station[4]+ " </font> </strong> </p>"
+ 
+             +"<p class='habitants'>Code du projet et taux financier par actions:  <strong> <font size='2' color='red'> " +station[4]+ " </font> </strong> </p>"
               +"<p class='habitants'>Programme:</br>  <strong> <font size='2' color='red'   > " +station[6]+ " </font> </strong> </p>"
               
-              +"<p class='habitants'>Source de financement selectionnée:</br>  <strong> <font size='2' color='red'   > " +station[10]+ "     </font> </strong> </p>"
+              +"<p class='habitants'>Source de financement selectionnée:  <strong> <font size='2' color='red'   > " +station[10]+ "     </font> </strong> </p>"
 
             +"Coordonnees :  "
 							+"<p class='indent'>Latitude : "+station[0]+"</p>"
@@ -470,7 +473,8 @@ function setMarkers(map,locations){
 						+"</div>"
       
 					);
-
+          
+ 
   infoWindow.open(map, this);
 
       map.setZoom(13);
@@ -490,7 +494,7 @@ function setMarkers(map,locations){
   
 	google.maps.event.addDomListener(window, 'load', initialize);
 
-        
+
 
 });
 

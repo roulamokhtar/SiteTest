@@ -112,14 +112,14 @@ function getNomAction() {
 		 $datas=$res->fetch(PDO::FETCH_OBJ);
         return $datas; // Accès au résultat
     }
-    function getNomLocalites($circonscription="" ) {
+    function getNomLocalites($localitess="" ) {
         $bdd = parent::getBdd();
 		
-		$sql = "SELECT  * FROM markers_villes ";
+		$sql = "SELECT  ville_nom_reel,ville_id  FROM markers_villes ";
 		 
 		 if(isset($_POST['localite'])){
 	$localitess = $_POST['localite'];
-	$sql .= " where ville_id=".$localitess."";
+	$sql .= " where ville_id=".$localitess ;
 }
 		
         $res = $bdd->prepare($sql);
@@ -959,7 +959,7 @@ if (isset($_POST['finance'])){
 				$sql .=  " and action.source_financement in ('" . implode("','", $natureFinance) . "')";  
 		 }
 
-if (!empty($localite)){
+if (isset( $_POST['localite'])){
 			$sql .=  " and markers_villes.ville_id = '".$localite."'";
 		} 
 
