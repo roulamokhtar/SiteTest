@@ -11,7 +11,7 @@ class BDD {
 //__Effectue la connexion à la BDD
 //__Instancie et renvoie l'objet PDO associé
     function getBdd() {
-    	$bdd = new PDO("pgsql:host=localhost;dbname=AA", "postgres", "foret");
+    	$bdd = new PDO("pgsql:host=ec2-50-17-206-214.compute-1.amazonaws.com;dbname=postgresql-rigid-43283", "vpxvhvftohqcoq", "57606f9441058e43b836e87aa125de6a843803c3e671bf9e254654723119abac");
    $bdd->exec("SET NAMES utf8");
       $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 		
