@@ -6,7 +6,7 @@
 
 
 class BDD {
-	var $localhost = "", $user = "postgres", $password = "foret", $dbname='AA';
+	 
 		
 //__Effectue la connexion à la BDD
 //__Instancie et renvoie l'objet PDO associé
