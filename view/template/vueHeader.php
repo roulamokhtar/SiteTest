@@ -5,7 +5,7 @@
   <head>
   	<!-- balise méta prise en compte par Google -->
     <meta charset="utf-8">
-    <meta https-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?php echo (!empty($description)) ? $description : ''; ?>">
     <meta name="<?php echo (!empty($robotName)) ? $robotName : ''; ?>" content="<?php echo (!empty($robotContent)) ? $robotContent : ''; ?>" />
@@ -21,14 +21,12 @@
     <title><?php echo (!empty($title)) ? $title : ''; ?></title>
 
     <!-- Bootstrap core CSS -->
-     <link href="common/css/bootstrap.css" rel="stylesheet">  
-    <link href="common/css/bootstrap.min.css" rel="stylesheet">
+     <link href="common/css/bootstrap.min.css" rel="stylesheet">
      <!--  <link href="common/css/bootstrap-theme.css" rel="stylesheet"> -->
    <!--  <link href="common/css/bootstrap-theme.min.css" rel="stylesheet">-->
     <!--<link href="common/css/docs.css" rel="stylesheet">-->
 
-     <link href="common/css/style.css" rel="stylesheet"> 
-
+ 
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->

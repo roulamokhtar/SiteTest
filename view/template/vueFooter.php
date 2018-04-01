@@ -6,12 +6,13 @@
 
 	
 	<script type="text/javascript" src="common/js/form/jquery.validate.min.js"></script>
-	<!--<script type="text/javascript" src="recherche.js"></script>-->
+	
 	<script type="text/javascript" src="common/js/form/additional-methods.min.js"></script>
 	
-	<?php if($page == "maps" or $page == "projets" or $page == "actions"): ?>
-		<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> <!-- Google Maps -->
-		<script src="https://www.google.com/jsapi"></script>
+	<?php if($page == "maps"): ?>
+		<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb4zkM4A_4LPifJAWMQFEgeGVmgBDwt2U"
+  type="text/javascript"></script>
+		<script src="http://www.google.com/jsapi"></script>
 		<script src="common/js/points.json"></script>
 		<script src="common/js/maps.js"></script>
 	<?php endif; ?>

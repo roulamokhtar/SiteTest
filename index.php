@@ -3,7 +3,7 @@
 
 <!DOCTYPE html> 
 <html lang="fr"> 
- <div>
+ 
   <head>
     <meta charset="utf-8">
     <title>Administration</title>
@@ -45,10 +45,11 @@ if(!$rows=$z){
   
   	
  ?>
- 
+ <body>
 <form class="form-style-3" action="index.php" method ="POST">
-<fieldset><legend>Authentification</legend>
+ <legend>Authentification</legend>
 <label for="field1"><span>Circonscription  <span class="required"> </span></span><input type="text" class="input-field" name="name" value="" /></label>
+
 <label for="field2"><span>Mot de passe <span class="required"> </span></span><input type="password" class="input-field" name="pwd"   /></label>
  
  <label for="field1"> <?php   echo    "Veuiller entrer votre nom d 'utilisateur et mot de passe "      ;?></label>
@@ -57,7 +58,7 @@ if(!$rows=$z){
 <label><span>&nbsp;</span><input type="submit" value="Submit" name="Entrer" placeholder="Entrer"/></label>
 
 </form>
- 
+ </body>
   <?php  
   }else{
  
@@ -79,6 +80,5 @@ session_start();
     	include_once("view/vueIndex.php");
 
     
-    }
-   
-  
+    }?>
+ </html>
