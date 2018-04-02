@@ -13,7 +13,8 @@ header('Location:index.php'   );
 /*
  * Contrôleur de notre page de maps
  * gère la dynamique de l'application. Elle fait le lien entre l'utilisateur et le reste de l'application
- */
+ */    
+
 	
 	include_once("model/BDD.php");
 	include_once("model/Map.php");

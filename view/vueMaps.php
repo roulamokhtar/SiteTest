@@ -1,18 +1,20 @@
 
-<?php include_once("template/vueHeader.php"); ?>
-<?php include_once("template/vueNavbar.php"); ?>
- 
+
+ <!DOCTYPE html>
+<html lang="fr">
+  <head>
+<meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+</head>
   <body>
 
   <div id="form">
 
-		<form method="post" id="form" class="  formMaps" role="form" action="maps.php">
+		<form method="post" id="form" class="formMaps" role="form" action="maps.php">
 			
  				<h4 align="center"> Formulaire de recherche  </h4>
-					 <class="col-sm-12" departement">
+					 <class="col-sm-12" name="departement">
 					<h6>Choisir votre commune :</h6>
 
 					<select name="departement" size="2">
@@ -212,6 +214,7 @@ Année:
    	 
 	</body>
 
-
+<?php include_once("template/vueHeader.php"); ?>
+<?php include_once("template/vueNavbar.php"); ?>
 	<?php include_once("template/vueFooter.php"); ?>
  

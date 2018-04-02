@@ -3,8 +3,7 @@
 <?php include_once("template/vueNavbar.php"); ?>
 <head> 
    
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="jquery.fancybox.min.js"></script>
+  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link   href="jquery.fancybox.min.css"  rel="stylesheet"  > 
@@ -174,3 +173,5 @@ position: relative;
   
 
 	<?php include_once("template/vueFooter.php"); ?>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="jquery.fancybox.min.js"></script>
