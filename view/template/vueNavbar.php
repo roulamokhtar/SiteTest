@@ -10,7 +10,7 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-          <li <?php echo ($page == "indexs") ? 'class="active"' : ''; ?> ><a href="Bienvenue.php">Bienvenue au site </a></li>
+          <li <?php echo ($page == "indexs") ? 'class="active"' : ''; ?> ><a href="Bienvenue.php">Bienvenue au sites </a></li>
             <li <?php echo ($page == "maps") ? 'class="active"' : ''; ?> ><a href="maps.php">Cartographie dynamique des projets </a></li>
             <li <?php echo ($page == "projets") ? 'class="active"' : ''; ?> ><a href="projets.php">Consultation des Projets </a></li>
           <li <?php echo ($page == "actions") ? 'class="active"' : ''; ?> ><a href="actions.php">Consultation des actions</a></li>
